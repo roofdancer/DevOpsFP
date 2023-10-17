@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: fallback-webapp
-        image: antone/fallbackimage:v0.0.1
+        image: antone/fallbackimage:latest
         ports:
           - containerPort: 5001
         resources:

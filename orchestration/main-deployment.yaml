@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: main-webapp
-        image: antone/mainimage:v0.0.1
+        image: antone/mainimage:latest
         ports:
           - containerPort: 5000
         resources:

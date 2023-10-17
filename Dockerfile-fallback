@@ -12,10 +12,9 @@ RUN echo installing \
     && pip3 install -r requirements.txt \
     && mkdir -p ${ROOT_PATH}
 
-ADD model.tar.gz ${ROOT_PATH}/model
-COPY bertClassifier.py ${ROOT_PATH}
-COPY appMain.py ${ROOT_PATH}
+COPY simpleClassifier.py ${ROOT_PATH}
+COPY appFallback.py ${ROOT_PATH}
 WORKDIR ${ROOT_PATH}
 
-EXPOSE 5000
-ENTRYPOINT ["python3", "appMain.py"]
+EXPOSE 5001
+ENTRYPOINT ["python3", "appFallback.py"]
