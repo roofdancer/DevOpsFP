@@ -3,6 +3,11 @@ kind: Ingress
 metadata:
   name: webapp-ingress
 spec:
+  defaultBackend:
+    service:
+      name: fallback-webapp
+      port:
+        number: 80
   rules:
     - host: spellchecker.mds
       http:
