@@ -17,6 +17,9 @@ spec:
       containers:
       - name: main-webapp
         image: antone/mainimage:latest
+        env:
+          - name: MODEL_PATH
+            value: "/opt/my_service/model/model/"
         ports:
           - containerPort: 5000
         resources:
