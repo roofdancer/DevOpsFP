@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fallback-webapp
+  labels:
+    app: fallback-webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fallback-webapp
+  template:
+    metadata:
+      labels:
+        app: fallback-webapp
+    spec:
+      containers:
+      - name: fallback-webapp
+        image: antone/fallbackimage:v0.0.1
+        ports:
+          - containerPort: 5001
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1000Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
+#      imagePullSecrets:
+#      - name: mds-registry-config-json

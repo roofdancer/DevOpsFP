@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: main-webapp
+  labels:
+    app: main-webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: main-webapp
+  template:
+    metadata:
+      labels:
+        app: main-webapp
+    spec:
+      containers:
+      - name: main-webapp
+        image: antone/mainimage:v0.0.1
+        ports:
+          - containerPort: 5000
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1000Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
+#      imagePullSecrets:
+#      - name: mds-registry-config-json

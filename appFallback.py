@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from com.fallback.nlp import simpleClassifier
+import simpleClassifier
 
 app = Flask(__name__)
 classifier = simpleClassifier.SimpleClassifier()

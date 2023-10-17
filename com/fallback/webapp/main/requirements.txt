@@ -1,6 +1,0 @@
-torch~=2.1.0
-numpy~=1.26.1
-transformers~=4.34.0
-nltk~=3.8.1
-pymorphy2~=0.9.1
-flask~=3.0.0

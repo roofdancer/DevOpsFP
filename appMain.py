@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
-from com.fallback.nlp import bertClassifier
-
+import bertClassifier
 
 app = Flask(__name__)
 classifier = bertClassifier.BertClassifier()
