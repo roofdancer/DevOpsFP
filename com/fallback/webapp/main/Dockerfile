@@ -3,6 +3,7 @@ FROM ubuntu:bionic
 ENV ROOT_PATH="/opt/my_service"
 
 ADD ../../../../requirements.txt requirements.txt
+ADD ../../../../model.tar.gz ${ROOT_PATH}/model
 RUN echo installing \
     && apt-get update -qq \
     && apt-get install -y \

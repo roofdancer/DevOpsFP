@@ -1,9 +1,9 @@
 from transformers import AutoTokenizer, BertForSequenceClassification
 import torch
 import numpy as np
+import os
 
-
-model_path = '../../../model/'
+model_path = os.environ['MODEL_PATH']
 
 
 class BertClassifier:
