@@ -16,7 +16,7 @@
 
     - name: "Install minicube"
       ansible.builtin.apt:
-        deb: "https://github.com/kubernetes/minikube/releases/download/v1.17.1/minikube_1.17.1-0_amd64.deb"
+        deb: "https://github.com/kubernetes/minikube/releases/download/v1.31.2/minikube_1.31.2-0_amd64.deb"
       when: "'minikube' not in ansible_facts.packages"
 
     - name: "Add repo keys"
@@ -50,7 +50,7 @@
 
     - name: "Launch minikube"
       ansible.builtin.shell:
-        cmd: "minikube start"
+        cmd: "minikube start --memory=4500m"
       when: "not minikube_status.stdout or minikube_status.stdout != 'Running'"
       become: no
 
